@@ -24,7 +24,8 @@ public class ConfigFloat extends ConfigDouble {
     @Override
     public void setDoubleValue(double value)
     {
-        super.setDoubleValue(Double.valueOf(new DecimalFormat("#.####").format(value)));
+        super.setDoubleValue(Double.valueOf(String.format(
+            "#%c####", ((DecimalFormat)DecimalFormat.getInstance(Locale.getDefault()).getDecimalFormatSymbols.getDecimalSeparator())));
     }
 
     public float getFloatValue()
